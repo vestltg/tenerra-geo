@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Tenerra.ai</title>
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+    }
+
+    .container {
+      text-align: center;
+      padding: 3rem 2rem;
+      max-width: 700px;
+    }
+
+    .logo {
+      font-size: 3.5rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 0.25rem;
+    }
+
+    .logo span {
+      color: #4ecca3;
+    }
+
+    .tagline {
+      font-size: 1.15rem;
+      color: #a8d8c8;
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.04em;
+    }
+
+    .divider {
+      width: 60px;
+      height: 3px;
+      background: #4ecca3;
+      margin: 0 auto 2.5rem;
+      border-radius: 2px;
+    }
+
+    .description {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #cce8e0;
+      margin-bottom: 2.5rem;
+    }
+
+    .badge {
+      display: inline-block;
+      background: rgba(78, 204, 163, 0.15);
+      border: 1px solid rgba(78, 204, 163, 0.4);
+      color: #4ecca3;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 0.45rem 1.1rem;
+      border-radius: 50px;
+      margin-bottom: 2rem;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.8rem;
+      color: rgba(255, 255, 255, 0.35);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">GEO / HCOS Category Authority</div>
+    <div class="logo">Tenerra<span>.ai</span></div>
+    <p class="tagline">Intelligent Geographic &amp; Healthcare Category Intelligence</p>
+    <div class="divider"></div>
+    <p class="description">
+      Welcome to Tenerra.ai — your authoritative source for geographic and
+      healthcare operating system category data. We provide structured,
+      reliable category intelligence to power smarter decisions across the
+      healthcare landscape.
+    </p>
+    <footer>&copy; <span id="year"></span> Tenerra.ai &mdash; All rights reserved.</footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
