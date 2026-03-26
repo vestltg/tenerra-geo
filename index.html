@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tenerra — Coming Soon</title>
+  <meta name="description" content="Tenerra is coming soon. Stay tuned." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://tenerra.ai/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Tenerra — Coming Soon" />
+  <meta property="og:description" content="Tenerra is coming soon. Stay tuned." />
+  <meta property="og:url" content="https://tenerra.ai/" />
+  <meta property="og:type" content="website" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0a0f0d;
+      --surface: #111a15;
+      --accent: #3dffa0;
+      --accent-dim: rgba(61, 255, 160, 0.12);
+      --text: #e8f0eb;
+      --muted: #5a7a64;
+      --border: rgba(61, 255, 160, 0.15);
+    }
+
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Georgia', serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+      overflow: hidden;
+    }
+
+    /* Subtle grid background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(var(--border) 1px, transparent 1px),
+        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Radial glow */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(61, 255, 160, 0.06) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      max-width: 520px;
+    }
+
+    .wordmark {
+      font-size: clamp(2.8rem, 8vw, 5rem);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      line-height: 1;
+      margin-bottom: 1.25rem;
+    }
+
+    .wordmark span {
+      color: var(--accent);
+    }
+
+    .divider {
+      width: 40px;
+      height: 1px;
+      background: var(--accent);
+      margin: 0 auto 1.5rem;
+      opacity: 0.6;
+    }
+
+    .tagline {
+      font-size: 1rem;
+      color: var(--muted);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      font-family: 'Courier New', monospace;
+      font-size: 0.8rem;
+    }
+
+    .badge {
+      display: inline-block;
+      margin-top: 2.5rem;
+      padding: 0.4rem 1rem;
+      border: 1px solid var(--border);
+      background: var(--accent-dim);
+      color: var(--accent);
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 2px;
+    }
+
+    /* Fade-in animation */
+    .container {
+      animation: fadeUp 0.9s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(18px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="wordmark">ten<span>err</span>a</h1>
+    <div class="divider"></div>
+    <p class="tagline">Something is growing here</p>
+    <div class="badge">Coming Soon</div>
+  </div>
+</body>
+</html>
