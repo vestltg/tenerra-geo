@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Tenerra</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #f7f4ef;
+      --ink: #1a1714;
+      --muted: #6b6660;
+      --rule: #d6d0c8;
+      --accent: #3b5249;
+      --link: #3b5249;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 1.75;
+      min-height: 100vh;
+    }
+
+    /* ── Header ── */
+    header {
+      border-bottom: 1px solid var(--rule);
+      padding: 1.25rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .wordmark {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 400;
+      font-size: 1.35rem;
+      letter-spacing: 0.04em;
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    nav a {
+      font-size: 0.8rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-decoration: none;
+    }
+
+    nav a:hover { color: var(--ink); }
+
+    /* ── Page layout ── */
+    .page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    /* ── Document header ── */
+    .doc-header {
+      margin-bottom: 3rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .doc-label {
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2rem, 5vw, 2.75rem);
+      line-height: 1.15;
+      color: var(--ink);
+      margin-bottom: 1rem;
+    }
+
+    .effective-date {
+      font-size: 0.8rem;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+
+    /* ── Body content ── */
+    .intro {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem;
+      font-weight: 300;
+      line-height: 1.65;
+      color: #3a3632;
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-top: 2.75rem;
+      margin-bottom: 0.75rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+      color: #2e2b28;
+      font-size: 0.95rem;
+    }
+
+    ul {
+      margin: 0.5rem 0 1rem 1.25rem;
+      color: #2e2b28;
+      font-size: 0.95rem;
+    }
+
+    ul li { margin-bottom: 0.4rem; }
+
+    a { color: var(--link); }
+    a:hover { text-decoration: underline; }
+
+    .section { border-top: 1px solid var(--rule); padding-top: 0.5rem; margin-top: 0; }
+
+    /* ── Data table ── */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+      margin: 1rem 0 1.5rem;
+    }
+
+    .data-table th {
+      text-align: left;
+      font-weight: 500;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid var(--rule);
+      background: #ede9e2;
+    }
+
+    .data-table td {
+      padding: 0.6rem 0.75rem;
+      border-bottom: 1px solid var(--rule);
+      color: #2e2b28;
+      vertical-align: top;
+    }
+
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* ── Callout ── */
+    .callout {
+      margin: 1.5rem 0;
+      padding: 1.25rem 1.5rem;
+      background: #ede9e2;
+      border-left: 3px solid var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .callout p { margin-bottom: 0; }
+
+    /* ── Contact block ── */
+    .contact-block {
+      margin-top: 3rem;
+      padding: 1.75rem 2rem;
+      background: #ede9e2;
+      border-left: 3px solid var(--accent);
+      font-size: 0.9rem;
+    }
+
+    .contact-block p { margin-bottom: 0.25rem; color: #2e2b28; }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 1.5rem 2rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    footer a { color: var(--muted); text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a class="wordmark" href="https://tenerra.ai">Tenerra</a>
+    <nav><a href="https://tenerra.ai">← Back to tenerra.ai</a></nav>
+  </header>
+
+  <main class="page">
+
+    <div class="doc-header">
+      <p class="doc-label">Legal</p>
+      <h1>Privacy Policy</h1>
+      <p class="effective-date">Effective date: April 1, 2026 &nbsp;·&nbsp; Vest Life, Inc.</p>
+    </div>
+
+    <p class="intro">
+      We built ANYA for families who place extraordinary trust in the tools they use. This policy explains exactly what information we collect, why we collect it, and how we protect it — including the sensitive information about individuals with intellectual and developmental disabilities that you may share with us.
+    </p>
+
+    <div class="callout">
+      <p><strong>A note on sensitivity.</strong> ANYA is designed for families of individuals with IDD. The information you share may include details about your child's or dependent's health, behavior, legal status, and daily life. We treat this information with the highest level of care and do not sell it, share it for advertising, or use it to train AI models.</p>
+    </div>
+
+    <div class="section">
+      <h2>1. Who This Policy Covers</h2>
+      <p>This Privacy Policy applies to all users of ANYA and tenerra.ai — parents, guardians, caregivers, and others who create accounts and use our services. It covers information about both account holders and the individuals whose continuity information is stored in ANYA.</p>
+    </div>
+
+    <div class="section">
+      <h2>2. Information We Collect</h2>
+      <p>We collect information you provide directly, information generated through your use of the Service, and limited technical information.</p>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Category</th>
+            <th>Examples</th>
+            <th>Why We Collect It</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Account information</strong></td>
+            <td>Name, email address, password</td>
+            <td>To create and manage your account</td>
+          </tr>
+          <tr>
+            <td><strong>Billing information</strong></td>
+            <td>Payment method details (processed by our payment provider)</td>
+            <td>To process subscription payments</td>
+          </tr>
+          <tr>
+            <td><strong>Family and dependent information</strong></td>
+            <td>Names, ages, diagnoses, care notes, behavioral observations, legal arrangements</td>
+            <td>To provide ANYA's core continuity services</td>
+          </tr>
+          <tr>
+            <td><strong>AI conversation history</strong></td>
+            <td>Prompts, responses, and documents you generate through ANYA</td>
+            <td>To power the Service and allow you to retrieve past interactions</td>
+          </tr>
+          <tr>
+            <td><strong>Usage data</strong></td>
+            <td>Pages visited, features used, session duration</td>
+            <td>To improve the Service and diagnose technical issues</td>
+          </tr>
+          <tr>
+            <td><strong>Technical data</strong></td>
+            <td>IP address, browser type, device identifiers</td>
+            <td>Security, fraud prevention, and service delivery</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>We do not knowingly collect information from children under 13. ANYA is for adult caregivers. If you believe a child has submitted information directly, contact us at <a href="mailto:hello@tenerra.ai">hello@tenerra.ai</a>.</p>
+    </div>
+
+    <div class="section">
+      <h2>3. How We Use Your Information</h2>
+      <p>We use the information we collect to:</p>
+      <ul>
+        <li>Provide, maintain, and improve the ANYA service</li>
+        <li>Process payments and manage your subscription</li>
+        <li>Respond to your questions and support requests</li>
+        <li>Send transactional communications (account updates, billing receipts)</li>
+        <li>Detect and prevent fraud, abuse, and security incidents</li>
+        <li>Comply with legal obligations</li>
+      </ul>
+      <p>We do not use your information — including family and dependent information — to serve you advertising, sell to third parties, or train AI models.</p>
+    </div>
+
+    <div class="section">
+      <h2>4. AI Processing and AWS Bedrock</h2>
+      <p>ANYA's AI capabilities are powered by Amazon Web Services (AWS) Bedrock. When you interact with ANYA's AI features, your prompts and content are processed by AWS Bedrock infrastructure.</p>
+      <p>Under our agreement with AWS, neither AWS nor Anthropic (the AI model provider) logs or trains on your data through our use of Bedrock. Output generated by the AI is owned by you, the customer, as described in the applicable AWS Service Terms.</p>
+      <p>We recommend that your attorney review the current <a href="https://aws.amazon.com/service-terms/" target="_blank" rel="noopener">AWS Service Terms</a> and <a href="https://www.anthropic.com/legal/usage-policy" target="_blank" rel="noopener">Anthropic usage policies</a> if your situation requires formal legal confirmation of these protections.</p>
+    </div>
+
+    <div class="section">
+      <h2>5. How We Share Your Information</h2>
+      <p>We do not sell your personal information. We share information only in these limited circumstances:</p>
+      <ul>
+        <li><strong>Service providers.</strong> We share information with vendors who help us operate the Service (cloud infrastructure, payment processing, email delivery). These providers are contractually bound to protect your data and use it only for the services they perform for us.</li>
+        <li><strong>Legal compliance.</strong> We may disclose information if required by law, court order, or government request, or to protect the rights, safety, or property of Vest Life, our users, or the public.</li>
+        <li><strong>Business transfers.</strong> If Vest Life, Inc. is involved in a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction. We will notify you of any such change and any choices you may have.</li>
+        <li><strong>With your consent.</strong> We may share information in other ways when you explicitly authorize us to do so.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>6. Data Retention</h2>
+      <p>We retain your information for as long as your account is active or as needed to provide the Service. If you close your account, we will delete or anonymize your personal information within a reasonable period, except where we are required to retain it by law or for legitimate business purposes such as fraud prevention or dispute resolution.</p>
+      <p>You may request deletion of your data at any time by contacting <a href="mailto:hello@tenerra.ai">hello@tenerra.ai</a>.</p>
+    </div>
+
+    <div class="section">
+      <h2>7. Data Security</h2>
+      <p>We implement industry-standard security measures to protect your information, including encryption in transit and at rest, access controls, and regular security reviews. Our infrastructure is hosted on AWS and benefits from their enterprise-grade security controls.</p>
+      <p>No system is completely secure. We cannot guarantee absolute security, but we are committed to responding promptly to any suspected breach and notifying affected users as required by law.</p>
+    </div>
+
+    <div class="section">
+      <h2>8. Your Rights and Choices</h2>
+      <p>Depending on where you live, you may have rights regarding your personal information, including:</p>
+      <ul>
+        <li>The right to access the information we hold about you</li>
+        <li>The right to correct inaccurate information</li>
+        <li>The right to delete your information (subject to legal limitations)</li>
+        <li>The right to object to or restrict certain processing</li>
+        <li>The right to data portability</li>
+      </ul>
+      <p>To exercise any of these rights, contact us at <a href="mailto:hello@tenerra.ai">hello@tenerra.ai</a>. We will respond within a reasonable timeframe and as required by applicable law.</p>
+    </div>
+
+    <div class="section">
+      <h2>9. California Privacy Rights</h2>
+      <p>If you are a California resident, you may have additional rights under the California Consumer Privacy Act (CCPA) and the California Privacy Rights Act (CPRA), including the right to know what personal information we collect and share, the right to delete your personal information, and the right to opt out of the sale of personal information. We do not sell personal information. To submit a request, contact <a href="mailto:hello@tenerra.ai">hello@tenerra.ai</a>.</p>
+    </div>
+
+    <div class="section">
+      <h2>10. Cookies and Tracking</h2>
+      <p>We use cookies and similar technologies to maintain your session, remember your preferences, and understand how the Service is used. We do not use third-party advertising cookies. You can configure your browser to refuse cookies, though some features of the Service may not function correctly without them.</p>
+    </div>
+
+    <div class="section">
+      <h2>11. Third-Party Links</h2>
+      <p>ANYA may contain links to external websites or resources. This Privacy Policy does not apply to those third-party sites. We encourage you to review the privacy policies of any external sites you visit.</p>
+    </div>
+
+    <div class="section">
+      <h2>12. Changes to This Policy</h2>
+      <p>We may update this Privacy Policy from time to time. When we do, we will revise the effective date at the top of this page and, where appropriate, notify you by email. Material changes will be communicated with reasonable advance notice. Your continued use of the Service after changes take effect constitutes your acceptance of the updated policy.</p>
+    </div>
+
+    <div class="contact-block">
+      <p><strong>Privacy questions or requests?</strong></p>
+      <p>Vest Life, Inc.</p>
+      <p>Sacramento, California</p>
+      <p><a href="mailto:hello@tenerra.ai">hello@tenerra.ai</a></p>
+    </div>
+
+  </main>
+
+  <footer>
+    <span>© 2026 Vest Life, Inc. — tenerra.ai</span>
+    <span>
+      <a href="/tos">Terms of Service</a>
+      &nbsp;·&nbsp;
+      <a href="https://anya.tenerra.ai">ANYA</a>
+    </span>
+  </footer>
+
+</body>
+</html>
