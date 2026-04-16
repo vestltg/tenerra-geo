@@ -1,18 +1,20 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ],
-  "packageRules": [
-    {
-      "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
-    },
-    {
-      "matchUpdateTypes": ["major"],
-      "automerge": false,
-      "groupName": "major dependency updates",
-      "schedule": ["after 10pm on Saturday", "before 6am on Sunday"]
-    }
-  ]
-}
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:recommended"],
+    "timezone": "America/Los_Angeles",
+    "assignees": ["sman97"],
+    "packageRules": [
+      {
+        "matchUpdateTypes": ["minor", "patch"],
+        "automerge": true,
+        "automergeType": "pr",
+        "automergeStrategy": "squash"
+      },
+      {
+        "matchUpdateTypes": ["major"],
+        "automerge": false,
+        "groupName": "major dependency updates",
+        "schedule": ["after 10pm on saturday", "before 6am on sunday"]
+      }
+    ]
+  }
