@@ -3,6 +3,7 @@
     "extends": ["config:recommended"],
     "timezone": "America/Los_Angeles",
     "assignees": ["sman97"],
+    "platformAutomerge": true,
     "packageRules": [
       {
         "matchUpdateTypes": ["minor", "patch"],
