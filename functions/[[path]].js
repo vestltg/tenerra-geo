@@ -137,11 +137,11 @@ function withDiscoveryHeaders(response, pathname) {
 }
 
 function markdownResponse(markdown, isHead) {
-  const tokenEstimate = markdown.trim().split(/\s+/).length;
+  const estimatedTokens = Math.ceil(markdown.length / 4);
   return new Response(isHead ? null : markdown, {
     headers: {
       'content-type': 'text/markdown; charset=utf-8',
-      'x-markdown-tokens': String(tokenEstimate),
+      'x-markdown-tokens': String(estimatedTokens),
       Link: DISCOVERY_LINK_HEADER
     }
   });
@@ -197,9 +197,10 @@ export async function onRequest(context) {
   }
 
   let assetRequest = request;
-  if (pathname === '/privacy' || pathname === '/tos') {
+  const hasHtmlFallback = normalizedPath !== '/' && Boolean(MARKDOWN_PAGES[normalizedPath]);
+  if (hasHtmlFallback && pathname === normalizedPath) {
     const htmlUrl = new URL(request.url);
-    htmlUrl.pathname = `${pathname}.html`;
+    htmlUrl.pathname = `${normalizedPath}.html`;
     assetRequest = new Request(htmlUrl, request);
   }
 
