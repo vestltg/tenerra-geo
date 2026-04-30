@@ -505,5 +505,36 @@
     </div>
   </footer>
 
+  <script>
+    (() => {
+      if (!navigator.modelContext || typeof navigator.modelContext.provideContext !== 'function') return;
+
+      navigator.modelContext.provideContext({
+        tools: [
+          {
+            name: 'get_tenerra_overview',
+            description: 'Returns a short overview of Tenerra and its primary product.',
+            inputSchema: { type: 'object', properties: {}, additionalProperties: false },
+            execute: async () => ({
+              company: 'Tenerra',
+              product: 'ANYA',
+              description: 'Tenerra builds continuity infrastructure for special needs families.',
+              url: 'https://tenerra.ai/'
+            })
+          },
+          {
+            name: 'get_public_documents',
+            description: 'Returns URLs for public legal and policy pages.',
+            inputSchema: { type: 'object', properties: {}, additionalProperties: false },
+            execute: async () => ({
+              privacy: 'https://tenerra.ai/privacy.html',
+              terms: 'https://tenerra.ai/tos.html'
+            })
+          }
+        ]
+      });
+    })();
+  </script>
+
 </body>
 </html>

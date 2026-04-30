@@ -1,0 +1,19 @@
+{
+  "$schema": "https://agentskills.io/schema/agent-skills-discovery-v0.2.0.json",
+  "skills": [
+    {
+      "name": "site-overview",
+      "type": "knowledge",
+      "description": "Summarize Tenerra and ANYA from public site content.",
+      "url": "https://tenerra.ai/.well-known/agent-skills/site-overview.md",
+      "sha256": "9068153a1999cbb0441c473326527ef97912b38ba0f94f35f7b68103b48d0c6b"
+    },
+    {
+      "name": "public-documents",
+      "type": "knowledge",
+      "description": "Find public legal and API discovery documents.",
+      "url": "https://tenerra.ai/.well-known/agent-skills/public-documents.md",
+      "sha256": "ab95d1d2eb8ec429c01f02f318b799d7bc5ef380b954e0cb546fde1a5ba77079"
+    }
+  ]
+}
