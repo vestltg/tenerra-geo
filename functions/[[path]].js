@@ -137,6 +137,7 @@ function withDiscoveryHeaders(response, pathname) {
 }
 
 function markdownResponse(markdown, isHead) {
+  // Approximate token count for header signaling when tokenizer-specific counts are unavailable.
   const estimatedTokens = Math.ceil(markdown.length / 4);
   return new Response(isHead ? null : markdown, {
     headers: {
