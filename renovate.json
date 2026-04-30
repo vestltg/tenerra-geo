@@ -1,26 +1,27 @@
 {
-    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-    "extends": ["config:recommended"],
-    "timezone": "America/Los_Angeles",
-    "assignees": ["sman97"],
-    "platformAutomerge": true,
-    "packageRules": [
-      {
-        "matchUpdateTypes": ["minor", "patch"],
-        "automerge": true,
-        "automergeType": "pr",
-        "automergeStrategy": "squash"
-      },
-      {
-        "matchUpdateTypes": ["major"],
-        "automerge": false,
-        "groupName": "major dependency updates",
-        "schedule": ["after 10pm on saturday", "before 6am on sunday"]
-      },
-      {
-        "matchUpdateTypes": ["patch", "minor"],
-        "groupName": "patch updates",
-        "groupSlug": "patch"
-      }
-    ]
-  }
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "pinDigests": true,
+  "timezone": "America/Los_Angeles",
+  "assignees": ["sman97"],
+  "platformAutomerge": true,
+  "packageRules": [
+    {
+      "description": "Auto-merge patch, minor, and digest updates (3am–5am)",
+      "matchUpdateTypes": ["patch", "minor", "digest"],
+      "schedule": ["after 3am and before 5am"],
+      "automerge": true,
+      "automergeType": "pr",
+      "automergeStrategy": "squash",
+      "groupName": "patch and minor updates",
+      "groupSlug": "patch-minor"
+    },
+    {
+      "description": "Batch major updates into a weekly PR on Friday night / Saturday morning",
+      "matchUpdateTypes": ["major"],
+      "schedule": ["after 10pm on friday", "before 6am on saturday"],
+      "groupName": "major updates",
+      "automerge": false
+    }
+  ]
+}
