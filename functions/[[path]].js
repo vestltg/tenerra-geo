@@ -137,12 +137,9 @@ function withDiscoveryHeaders(response, pathname) {
 }
 
 function markdownResponse(markdown, isHead) {
-  // Approximate token count using 4 chars/token; this is a rough heuristic and can vary by tokenizer and non-ASCII content.
-  const estimatedTokens = Math.ceil(markdown.length / 4);
   return new Response(isHead ? null : markdown, {
     headers: {
       'content-type': 'text/markdown; charset=utf-8',
-      'x-markdown-tokens': String(estimatedTokens),
       Link: DISCOVERY_LINK_HEADER
     }
   });
@@ -154,6 +151,39 @@ function jsonResponse(payload, contentType) {
       'content-type': contentType
     }
   });
+}
+
+function parseQualityValue(mediaRange) {
+  const qMatch = mediaRange.match(/;\s*q=([0-9]*\.?[0-9]+)/i);
+  if (!qMatch) return 1;
+  const parsed = Number.parseFloat(qMatch[1]);
+  if (Number.isNaN(parsed)) return 1;
+  return Math.max(0, Math.min(1, parsed));
+}
+
+function shouldServeMarkdown(acceptHeader) {
+  if (!acceptHeader) return false;
+
+  let markdownQ = -1;
+  let htmlQ = -1;
+
+  for (const rawPart of acceptHeader.split(',')) {
+    const part = rawPart.trim();
+    if (!part) continue;
+
+    const [typePart] = part.split(';', 1);
+    const mediaType = typePart.trim().toLowerCase();
+    const q = parseQualityValue(part);
+
+    if (mediaType === 'text/markdown') {
+      markdownQ = Math.max(markdownQ, q);
+    } else if (mediaType === 'text/html') {
+      htmlQ = Math.max(htmlQ, q);
+    }
+  }
+
+  if (markdownQ <= 0) return false;
+  return markdownQ >= Math.max(htmlQ, 0);
 }
 
 export async function onRequest(context) {
@@ -192,7 +222,7 @@ export async function onRequest(context) {
   }
 
   const normalizedPath = normalizePath(pathname);
-  const wantsMarkdown = request.headers.get('accept')?.includes('text/markdown');
+  const wantsMarkdown = shouldServeMarkdown(request.headers.get('accept'));
   if (wantsMarkdown && MARKDOWN_PAGES[normalizedPath]) {
     return markdownResponse(MARKDOWN_PAGES[normalizedPath], isHead);
   }
