@@ -94,15 +94,7 @@ const OPENID_CONFIGURATION = {
   token_endpoint_auth_methods_supported: ['client_secret_post']
 };
 
-const OAUTH_AUTHORIZATION_SERVER = {
-  issuer: OAUTH_ISSUER,
-  authorization_endpoint: `${SITE_URL}/oauth/authorize`,
-  token_endpoint: `${SITE_URL}/oauth/token`,
-  jwks_uri: `${SITE_URL}/oauth/jwks.json`,
-  grant_types_supported: ['authorization_code', 'refresh_token', 'client_credentials'],
-  response_types_supported: ['code'],
-  token_endpoint_auth_methods_supported: ['client_secret_post']
-};
+const OAUTH_AUTHORIZATION_SERVER = OPENID_CONFIGURATION;
 
 const OAUTH_PROTECTED_RESOURCE = {
   resource: SITE_URL,
