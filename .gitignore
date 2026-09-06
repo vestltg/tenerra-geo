@@ -2,3 +2,5 @@
 # Foundation video animatic build artifacts
 tools/foundation-video-animatic/build/
 tools/foundation-video-animatic/*.mp4
+tools/foundation-video-animatic/verify_frames/
+tools/foundation-video-animatic/__pycache__/
