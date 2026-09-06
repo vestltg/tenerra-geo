@@ -1,0 +1,4 @@
+
+# Foundation video animatic build artifacts
+tools/foundation-video-animatic/build/
+tools/foundation-video-animatic/*.mp4
