@@ -38,8 +38,9 @@ INK, CREAM, ACCENT, MUTED, WARN = (
 
 
 def beat1_frame():
-    img = Image.new("RGB", (W, H), CREAM)
+    img = ap.gradient_background(CREAM, PALETTE["cream_dim"])
     d = ImageDraw.Draw(img)
+    ap.accent_rule(d, W / 2, H / 2 - 190, palette=PALETTE)
     quote_f = ap.font(ap.SERIF, 52)
     attrib_f = ap.font(ap.SERIF_ITALIC, 34)
     lines = ["“It's so easy!”", "", "“Now I'm not the only one holding it.", "Anya is too.”"]
@@ -127,13 +128,14 @@ def beat4_frame():
 
 
 def beat5_frame():
-    img = Image.new("RGB", (W, H), CREAM)
+    img = ap.gradient_background(CREAM, PALETTE["cream_dim"])
     d = ImageDraw.Draw(img)
+    ap.accent_rule(d, W / 2, H / 2 - 110, palette=PALETTE)
     url_f = ap.font(ap.SANS, 64)
     url = "anya.tenerra.ai"
     w = d.textlength(url, font=url_f)
     d.text(((W - w) / 2, H / 2 - 40), url, font=url_f, fill=INK)
-    ap.pending_tag(d, "[ FINAL URL NOT YET CONFIRMED ]", W / 2, H / 2 + 50, color=(160, 90, 80), size=26)
+    ap.pending_tag(d, "[ FINAL URL NOT YET CONFIRMED ]", W / 2, H / 2 + 60, color=(160, 90, 80), size=26)
     ap.watermark(d)
     return img
 

@@ -65,15 +65,31 @@ def load_palette(html_path, fallback=None):
     def brightness(rgb):
         return sum(rgb) / 3
 
-    rgbs = [to_rgb(h) for h in ordered]
+    rgbs = sorted(set(to_rgb(h) for h in ordered), key=brightness, reverse=True)
+    lightest = rgbs[0]
     darkest = min(rgbs, key=brightness)
-    lightest = max(rgbs, key=brightness)
     mids = [c for c in rgbs if c not in (darkest, lightest)]
     accent = max(mids, key=lambda c: max(c) - min(c)) if mids else lightest
+
+    # cream_dim needs to be genuinely distinct from cream (for gradients),
+    # but still a light/neutral tone, not just "the next color found" —
+    # otherwise a gradient built from it can shift hue instead of just
+    # value. Prefer a real near-white second tone from the site; if none
+    # exists, synthesize one by darkening cream slightly rather than
+    # reusing cream itself, which would make any gradient built from it a
+    # no-op flat fill.
+    cream_dim = None
+    for c in rgbs[1:]:
+        if brightness(lightest) - brightness(c) <= 40 and brightness(c) > 150:
+            cream_dim = c
+            break
+    if cream_dim is None:
+        cream_dim = tuple(max(v - 18, 0) for v in lightest)
+
     return {
         "ink": darkest,
         "cream": lightest,
-        "cream_dim": lightest,
+        "cream_dim": cream_dim,
         "accent": accent,
         "muted": (152, 152, 152),
         "warn": (200, 70, 60),
@@ -82,6 +98,32 @@ def load_palette(html_path, fallback=None):
 
 def font(path, size):
     return ImageFont.truetype(path, size)
+
+
+def gradient_background(color_top, color_bottom, w=W, h=H):
+    """A vertical gradient card, not a flat fill. A single flat color —
+    especially something near-white like a cream brand tone — reads as a
+    blank/broken screen once it's held for 10-20 seconds, even though the
+    same color works fine as a text background in print or on a web page
+    you can scroll past. Default to this for any full-bleed light or dark
+    card; reserve a flat fill for small elements (cards, bars), not full
+    frames."""
+    img = Image.new("RGB", (w, h))
+    d = ImageDraw.Draw(img)
+    for y in range(h):
+        t = y / max(h - 1, 1)
+        rgb = tuple(int(color_top[i] + (color_bottom[i] - color_top[i]) * t) for i in range(3))
+        d.line([(0, y), (w, y)], fill=rgb)
+    return img
+
+
+def accent_rule(draw, cx, cy, width=120, thickness=4, color=None, palette=None):
+    """A short accent-colored rule — a small, deliberate mark that reads as
+    a design choice rather than an empty frame. Use sparingly (one per
+    card) near a quote, headline, or URL; it should not compete with the
+    text it sits next to."""
+    color = color or (palette or DEFAULT_PALETTE)["accent"]
+    draw.rectangle([cx - width / 2, cy - thickness / 2, cx + width / 2, cy + thickness / 2], fill=color)
 
 
 def wrap(draw, text, fnt, max_width):
