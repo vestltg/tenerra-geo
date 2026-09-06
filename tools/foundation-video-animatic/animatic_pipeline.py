@@ -126,6 +126,75 @@ def accent_rule(draw, cx, cy, width=120, thickness=4, color=None, palette=None):
     draw.rectangle([cx - width / 2, cy - thickness / 2, cx + width / 2, cy + thickness / 2], fill=color)
 
 
+def load_header_wordmark(html_path):
+    """Pull the real logo + company-name lockup out of the site's own
+    <header>, instead of guessing what the "logo" is. A site header
+    typically carries two different things that are easy to conflate: the
+    wordmark itself (logo mark + company name, usually the thing linking
+    home) and a small secondary domain/URL label sitting elsewhere in the
+    header. Only the first one is the wordmark — the second is returned
+    separately (as `label_text`) precisely so it doesn't get used as a
+    stand-in for it.
+
+    Returns None if no <header> or no element with class="wordmark" is
+    found — callers should fall back to a plain logo-only treatment and
+    say so, not silently invent wordmark text.
+    """
+    if not html_path or not os.path.exists(html_path):
+        return None
+    with open(html_path, "r", errors="ignore") as f:
+        html = f.read()
+    header_match = re.search(r"<header\b.*?</header>", html, re.DOTALL | re.IGNORECASE)
+    if not header_match:
+        return None
+    header_html = header_match.group(0)
+    wm_match = re.search(r'class="[^"]*\bwordmark\b[^"]*"[^>]*>(.*?)</a>', header_html, re.DOTALL | re.IGNORECASE)
+    if not wm_match:
+        return None
+    inner = wm_match.group(1)
+    img_match = re.search(r'<img[^>]*src="([^"]+)"', inner, re.IGNORECASE)
+    logo_path = None
+    if img_match:
+        src = img_match.group(1)
+        logo_path = src if os.path.isabs(src) else os.path.join(os.path.dirname(html_path), src)
+    text = re.sub(r"<[^>]+>", " ", inner)
+    text = " ".join(text.split()).strip()
+    label_match = re.search(r'class="[^"]*\bheader-label\b[^"]*"[^>]*>(.*?)</', header_html, re.DOTALL | re.IGNORECASE)
+    label_text = " ".join(re.sub(r"<[^>]+>", " ", label_match.group(1)).split()).strip() if label_match else None
+    return {"logo_path": logo_path, "wordmark_text": text, "label_text": label_text}
+
+
+def render_wordmark(img, draw, logo_path, text, cx, cy, text_size=72, ink=None,
+                     font_path=None, logo_to_text_ratio=32 / 24, gap_ratio=0.4):
+    """Render the logo + company-name lockup as one unit, matching the
+    header's proportions (a fixed ratio of logo height to text size, and
+    gap to text size — pulled from the live header CSS, not guessed).
+    This is the right visual for a brand-open / "opening card" beat.
+    Never render the bare logo mark alone and call it the wordmark, and
+    never substitute a URL or domain label for it — `load_header_wordmark`
+    returns that label separately for exactly this reason.
+    """
+    ink = ink or DEFAULT_PALETTE["ink"]
+    have_brand_font = bool(font_path and os.path.exists(font_path))
+    f = font(font_path, text_size) if have_brand_font else font(SERIF, text_size)
+    if not have_brand_font:
+        print("WARNING: brand wordmark font not found — falling back to a "
+              "generic serif. This will not exactly match the site header's type.")
+    text_w = draw.textlength(text, font=f)
+    logo_h = int(text_size * logo_to_text_ratio)
+    gap = int(text_size * gap_ratio)
+    logo = Image.open(logo_path).convert("RGBA")
+    logo_w = int(logo.width * (logo_h / logo.height))
+    logo_resized = logo.resize((logo_w, logo_h))
+    total_w = logo_w + gap + text_w
+    x0 = cx - total_w / 2
+    img.paste(logo_resized, (int(x0), int(cy - logo_h / 2)), logo_resized)
+    bbox = f.getbbox(text)
+    text_h = bbox[3] - bbox[1]
+    draw.text((x0 + logo_w + gap, cy - text_h / 2 - bbox[1]), text, font=f, fill=ink)
+    return total_w
+
+
 def wrap(draw, text, fnt, max_width):
     words = text.split()
     lines, cur = [], ""

@@ -14,10 +14,14 @@ generates a **placeholder animatic**, not a shippable asset:
   is explicit that this asset needs Michael's real recorded voice, not
   synthetic speech — a cleaner TTS voice would risk being mistaken for
   final. Every frame carries a burned-in watermark saying so.
-- **Visuals are mockups.** Beat 2 stands in for the locked "Boxes → Vest"
-  static open using the real logo asset from `assets/images/tenerra-logo.png`
-  on a placeholder card. Beats 3–4 are generic chat-bubble mockups standing
-  in for the real Sample Mom capture/retrieval screens.
+- **Visuals are mockups**, except the opening card. Beat 2 stands in for
+  the locked "Boxes → Vest" static open, but renders the *real* site-header
+  wordmark — the actual logo (`assets/images/tenerra-logo.png`) plus
+  "Tenerra" set in the header's real typeface (Cormorant Garamond, bundled
+  at `fonts/CormorantGaramond-Regular.ttf`, SIL OFL from Google Fonts) —
+  not the bare icon alone and not the header's separate "tenerra.ai" URL
+  label. Beats 3–4 are generic chat-bubble mockups standing in for the
+  real Sample Mom capture/retrieval screens.
 - **Open items from the script are rendered on-screen, not silently
   resolved**: Beat 4's caption/exchange is marked `PENDING` (not sourced
   yet) and Beat 5's URL is marked `NOT YET CONFIRMED`, matching the

@@ -30,11 +30,18 @@ import animatic_pipeline as ap
 
 W, H = ap.W, ap.H
 HERE = os.path.dirname(os.path.abspath(__file__))
-LOGO_PATH = "/home/user/tenerra-geo/assets/images/tenerra-logo.png"
-PALETTE = ap.load_palette("/home/user/tenerra-geo/index.html")
+SITE_HTML = "/home/user/tenerra-geo/index.html"
+BRAND_FONT = os.path.join(HERE, "fonts", "CormorantGaramond-Regular.ttf")
+PALETTE = ap.load_palette(SITE_HTML)
 INK, CREAM, ACCENT, MUTED, WARN = (
     PALETTE["ink"], PALETTE["cream"], PALETTE["accent"], PALETTE["muted"], PALETTE["warn"],
 )
+HEADER_WORDMARK = ap.load_header_wordmark(SITE_HTML)
+if not HEADER_WORDMARK:
+    raise RuntimeError(
+        "Could not find the site header's wordmark in index.html — the "
+        "opening card needs the real logo+company-name lockup, not a guess."
+    )
 
 
 def beat1_frame():
@@ -60,18 +67,17 @@ def beat1_frame():
 
 
 def beat2_frame():
-    img = Image.new("RGB", (W, H), INK)
+    # Opening card: the real site-header wordmark (logo + "Tenerra"), not
+    # the bare icon and not the header's separate "tenerra.ai" URL label.
+    img = ap.gradient_background(INK, tuple(max(c - 10, 0) for c in INK))
     d = ImageDraw.Draw(img)
-    try:
-        logo = Image.open(LOGO_PATH).convert("RGBA")
-        target = 260
-        logo = logo.resize((target, target))
-        img.paste(logo, ((W - target) // 2, (H - target) // 2 - 40), logo)
-    except Exception:
-        f = ap.font(ap.SANS_BOLD, 90)
-        text = "ANYA"
-        w = d.textlength(text, font=f)
-        d.text(((W - w) / 2, H / 2 - 60), text, font=f, fill=CREAM)
+    ap.render_wordmark(
+        img, d,
+        logo_path=HEADER_WORDMARK["logo_path"],
+        text=HEADER_WORDMARK["wordmark_text"],
+        cx=W / 2, cy=H / 2 - 40,
+        text_size=84, ink=CREAM, font_path=BRAND_FONT,
+    )
     note_f = ap.font(ap.SANS, 24)
     note = "[ locked “Boxes → Vest” static open — placeholder card, real component not substituted ]"
     w = d.textlength(note, font=note_f)
