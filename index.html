@@ -188,7 +188,7 @@
       padding: 0 var(--space-3);
       display: flex;
       justify-content: space-between;
-      align-items: baseline;
+      align-items: center;
     }
     .site-header-name {
       font-family: Georgia, "Times New Roman", Times, serif;
@@ -197,6 +197,13 @@
       color: var(--color-text-primary);
       text-decoration: none;
       letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: var(--space-1);
+    }
+    .site-header-logo {
+      height: 28px;
+      width: auto;
     }
     .site-header-name:hover {
       text-decoration: none;
@@ -335,7 +342,10 @@
   <!-- SITE HEADER — persistent across all Tenerra pages -->
   <header class="site-header" role="banner">
     <div class="site-header-inner">
-      <a href="/" class="site-header-name" aria-label="Tenerra.ai — Home">Tenerra.ai</a>
+      <a href="/" class="site-header-name" aria-label="Tenerra.ai — Home">
+        <img src="assets/images/tenerra-logo.png" alt="" class="site-header-logo" />
+        Tenerra.ai
+      </a>
       <nav class="site-nav" aria-label="Primary">
         <a href="https://pearcelaw.net/articles/" target="_blank" rel="noopener">Articles</a>
       </nav>
