@@ -3,505 +3,413 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tenerra — Built for What Lasts</title>
-  <meta name="description" content="Tenerra builds infrastructure for the moments that matter most. Home of ANYA — continuity infrastructure for special needs families. By Vest Life, Inc." />
-  <meta name="robots" content="index, follow" />
-  <meta name="author" content="Vest Life, Inc." />
+  <title>Tenerra.ai — Building AI for Personal Continuity</title>
+  <meta name="description" content="Tenerra is a private AI company building the personal continuity layer. Our first product, ANYA, helps parents of children with intellectual and developmental disabilities keep their knowledge available across a lifetime." />
+
+  <!-- Canonical / robots -->
   <link rel="canonical" href="https://tenerra.ai/" />
-  <meta property="og:title" content="Tenerra — Built for What Lasts" />
-  <meta property="og:description" content="Tenerra builds infrastructure for the moments that matter most. Home of ANYA — continuity infrastructure for special needs families." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://tenerra.ai/" />
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="theme-color" content="#0D0D0D" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#111111" />
   <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon-16x16.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="assets/images/apple-touch-icon.png" />
 
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tenerra.ai — Building AI for Personal Continuity" />
+  <meta property="og:description" content="Tenerra is a private AI company building the personal continuity layer. Our first product, ANYA, helps parents of children with intellectual and developmental disabilities keep their knowledge available across a lifetime." />
+  <meta property="og:url" content="https://tenerra.ai/" />
+  <meta property="og:site_name" content="Tenerra, Inc." />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Tenerra.ai — Building AI for Personal Continuity" />
+  <meta name="twitter:description" content="Tenerra is a private AI company building the personal continuity layer. Our first product, ANYA, helps parents of children with intellectual and developmental disabilities keep their knowledge available across a lifetime." />
+
+  <!-- Structured data: knowledge-graph entities for GEO —
+       Organization (Tenerra), Person (Michael Pearce, company-scoped),
+       SoftwareApplication (ANYA), WebSite. Cross-links to anya.tenerra.ai
+       and pearcelaw.net so crawlers can build the three-node graph. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "name": "Tenerra",
-    "url": "https://tenerra.ai",
-    "description": "Tenerra builds infrastructure for the moments that matter most. Parent company of Vest Life, Inc. and home of ANYA — a Human Continuity Operating System for special needs families.",
-    "sameAs": ["https://anya.tenerra.ai"],
-    "subOrganization": {
+    "name": "Tenerra, Inc.",
+    "url": "https://tenerra.ai/",
+    "description": "Tenerra is a private AI company building the personal continuity layer — AI systems that let the knowledge a person accumulates persist, belong to them, and remain usable across a lifetime.",
+    "founder": {
+      "@type": "Person",
+      "name": "Michael Pearce",
+      "url": "https://pearcelaw.net/"
+    },
+    "sameAs": [
+      "https://www.anya.tenerra.ai/",
+      "https://pearcelaw.net/"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Michael Pearce",
+    "jobTitle": "Founder",
+    "worksFor": {
       "@type": "Organization",
-      "name": "Vest Life, Inc.",
-      "url": "https://anya.tenerra.ai"
+      "name": "Tenerra, Inc.",
+      "url": "https://tenerra.ai/"
+    },
+    "description": "Michael Pearce is a former California attorney who spent thirty years in special needs trust planning, trust administration, and conservatorships for adults with intellectual and developmental disabilities. That practice is the vantage point Tenerra was built from. Michael is also the creator of ANYA.",
+    "knowsAbout": [
+      "Special needs trust planning",
+      "Trust administration",
+      "Conservatorships",
+      "Intellectual and developmental disabilities",
+      "Personal continuity",
+      "AI for personal systems"
+    ],
+    "hasCredential": {
+      "@type": "EducationalOccupationalCredential",
+      "credentialCategory": "California State Bar",
+      "identifier": "145481"
+    },
+    "sameAs": [
+      "https://pearcelaw.net/"
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "ANYA",
+    "url": "https://www.anya.tenerra.ai/",
+    "description": "ANYA is a Knowledge Continuity System from Tenerra that helps parents of children with intellectual and developmental disabilities preserve their personal knowledge about their child — in the parent's own voice, for anyone the parent designates — so the next person responsible for the child does not have to start from zero when the parent is no longer available.",
+    "provider": {
+      "@type": "Organization",
+      "name": "Tenerra, Inc.",
+      "url": "https://tenerra.ai/"
+    }
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Tenerra.ai",
+    "url": "https://tenerra.ai/",
+    "publisher": {
+      "@type": "Organization",
+      "name": "Tenerra, Inc."
     }
   }
   </script>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Geist+Mono:wght@300;400&family=Geist:wght@300;400;500&display=swap" rel="stylesheet" />
-
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /*
+      Tenerra Index — Company Site
+      CSS system matches pearcelaw.net exactly (same tokens, type scale,
+      and component patterns), so the two Tenerra-family properties read
+      as one publication. No custom webfonts: Georgia for headings,
+      system UI stack for body text, same as pearcelaw.net.
+    */
 
     :root {
-      --ink: #0D0D0D;
-      --ink-soft: #3A3A3A;
-      --ink-muted: #888;
-      --ink-faint: #C8C8C8;
-      --label-ink: #7A7A7A;
-      --label-ink-soft: #989898;
-      --paper: #F5F3EE;
-      --paper-warm: #EDE9E1;
-      --rule: rgba(13,13,13,0.10);
-      --accent: #8256F7;
-      --accent-soft: rgba(130,86,247,0.08);
+      --color-bg: #ffffff;
+      --color-text-primary: #111;
+      --color-text-secondary: #333;
+      --color-text-muted: #555;
+      --color-text-light: #777;
+      --color-link: #111;
+      --color-border: #ebebeb;
+      --color-rule: #e3e3e3;
+      --space-1: 8px;
+      --space-2: 16px;
+      --space-3: 24px;
+      --space-4: 32px;
+      --space-5: 48px;
+      --space-6: 64px;
+      --space-7: 100px;
     }
 
-    html {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: 'Geist', -apple-system, sans-serif;
-      font-size: 16px;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background: var(--color-bg);
+      color: var(--color-text-secondary);
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
-      min-height: 100vh;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      overflow-x: hidden;
-    }
-
-    /* ─── GRAIN OVERLAY ─── */
-    body::before {
-      content: '';
-      position: fixed;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
-      pointer-events: none;
-      z-index: 0;
-      opacity: 0.5;
-    }
-
-    /* ─── HORIZONTAL RULES ─── */
-    .h-rule {
-      width: 100%;
-      height: 1px;
-      background: var(--rule);
-    }
-
-    /* ─── LAYOUT ─── */
-    .page {
-      position: relative;
-      z-index: 1;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 2.5rem;
-      width: 100%;
-    }
-
-    /* ─── HEADER ─── */
-    header {
-      position: relative;
-      z-index: 1;
-      padding: 2.2rem 0 2rem;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .header-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 2.5rem;
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-    }
-
-    .wordmark {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 1.5rem;
+    h1, h2, h3 {
+      font-family: Georgia, "Times New Roman", Times, serif;
       font-weight: 400;
-      letter-spacing: 0.04em;
-      color: var(--ink);
+      color: var(--color-text-primary);
+      letter-spacing: -0.01em;
+    }
+    h1 {
+      font-size: 44px;
+      line-height: 1.15;
+      margin-bottom: var(--space-3);
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--color-text-secondary);
+      margin-bottom: var(--space-3);
+    }
+    a {
+      color: var(--color-link);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1px;
+    }
+    a:hover {
+      text-decoration-thickness: 2px;
+    }
+
+    .container {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 var(--space-3);
+    }
+
+    /* ─── SITE HEADER ─── */
+    .site-header {
+      padding: var(--space-3) 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+    .site-header-inner {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 0 var(--space-3);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .site-header-name {
+      font-family: Georgia, "Times New Roman", Times, serif;
+      font-size: 18px;
+      font-weight: 400;
+      color: var(--color-text-primary);
       text-decoration: none;
+      letter-spacing: -0.01em;
       display: flex;
       align-items: center;
-      gap: 0.6rem;
+      gap: var(--space-1);
     }
-
-    .header-logo {
-      height: 32px;
+    .site-header-logo {
+      height: 28px;
       width: auto;
     }
-
-    .header-label {
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px;
-      font-weight: 400;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--label-ink);
-    }
-
-    /* ─── MAIN ─── */
-    main {
-      flex: 1 0 auto;
-      position: relative;
-      z-index: 1;
-      padding: 0;
-    }
-
-    /* ─── HERO ─── */
-    .hero {
-      padding: clamp(3.5rem, 8vw, 5.5rem) 0 5rem;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .hero-label {
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px;
-      font-weight: 400;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--label-ink);
-      margin-bottom: 2rem;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .hero-label::before {
-      content: '';
-      display: inline-block;
-      width: 20px;
-      height: 1px;
-      background: var(--label-ink);
-    }
-
-    .hero-headline {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(3.2rem, 7vw, 5.8rem);
-      font-weight: 300;
-      line-height: 1.08;
-      letter-spacing: -0.01em;
-      color: var(--ink);
-      max-width: 820px;
-      margin-bottom: 2.25rem;
-    }
-
-    .hero-headline em {
-      font-style: italic;
-      color: var(--accent);
-    }
-
-    .hero-body {
-      font-size: 1rem;
-      font-weight: 300;
-      color: var(--ink-soft);
-      max-width: 480px;
-      line-height: 1.75;
-    }
-
-    /* ─── PRODUCT STRIP ─── */
-    .product-strip {
-      padding: 4rem 0;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .strip-label {
-      font-family: 'Geist Mono', monospace;
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--label-ink-soft);
-      font-weight: 400;
-      margin-bottom: 2.5rem;
-    }
-
-    .product-card {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      align-items: end;
-      gap: 2rem;
-      padding: 2.5rem;
-      background: var(--paper-warm);
-      border: 1px solid var(--rule);
-      border-radius: 3px;
-      position: relative;
-      overflow: hidden;
-      transition: border-color 0.25s ease;
-    }
-
-    .product-card::before {
-      content: '';
-      position: absolute;
-      left: 0; top: 0; bottom: 0;
-      width: 3px;
-      background: var(--accent);
-    }
-
-    .product-card:hover {
-      border-color: rgba(130,86,247,0.25);
-    }
-
-    .product-name {
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 2.4rem;
-      font-weight: 400;
-      letter-spacing: 0.02em;
-      color: var(--ink);
-      margin-bottom: 0.5rem;
-    }
-
-    .product-desc {
-      font-size: 0.875rem;
-      font-weight: 300;
-      color: var(--ink-soft);
-      line-height: 1.65;
-      max-width: 560px;
-      margin-bottom: 1.5rem;
-    }
-
-    .product-tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--accent);
-      background: var(--accent-soft);
-      border: 1px solid rgba(130,86,247,0.2);
-      padding: 5px 12px;
-      border-radius: 2px;
-    }
-
-    .product-link {
-      font-family: 'Geist Mono', monospace;
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      color: var(--ink-muted);
+    .site-header-name:hover {
       text-decoration: none;
+    }
+    .site-nav {
       display: flex;
-      align-items: center;
-      gap: 0.4rem;
-      white-space: nowrap;
-      padding-bottom: 0.25rem;
-      border-bottom: 1px solid var(--ink-faint);
-      transition: color 0.2s, border-color 0.2s;
+      gap: var(--space-3);
+    }
+    .site-nav a {
+      font-size: 14px;
+      color: var(--color-text-light);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .site-nav a:hover {
+      color: var(--color-text-secondary);
+      text-decoration: none;
+    }
+    @media (max-width: 600px) {
+      .site-nav {
+        gap: var(--space-2);
+      }
+      .site-nav a {
+        font-size: 13px;
+      }
     }
 
-    .product-link:hover {
-      color: var(--accent);
-      border-color: var(--accent);
+    /* ─── HERO / FOLD ─── */
+    .hero {
+      padding: var(--space-5) 0 var(--space-6);
+      border-bottom: 1px solid var(--color-rule);
     }
-
-    .product-link .arrow {
-      transition: transform 0.2s;
+    .hero h1 {
+      font-size: 42px;
+      line-height: 1.15;
+      margin-bottom: var(--space-4);
+      max-width: 22ch;
     }
-
-    .product-link:hover .arrow {
-      transform: translateX(3px);
+    .hero-definition {
+      font-size: 19px;
+      line-height: 1.65;
+      font-style: italic;
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-4);
+      max-width: 640px;
     }
-
-    /* ─── ABOUT STRIP ─── */
-    .about-strip {
-      padding: 4rem 0;
-      border-bottom: 1px solid var(--rule);
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 4rem;
-      align-items: start;
+    .hero-core p {
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--color-text-secondary);
+      max-width: 640px;
     }
-
-    .about-col-label {
-      font-family: 'Geist Mono', monospace;
-      font-size: 9px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--label-ink-soft);
-      font-weight: 400;
-      padding-top: 0.2rem;
+    .hero-core p:last-child {
+      margin-bottom: 0;
     }
-
-    .about-text {
-      font-size: 0.9375rem;
-      font-weight: 300;
-      color: var(--ink-soft);
-      line-height: 1.8;
-    }
-
-    .about-text strong {
-      font-weight: 500;
-      color: var(--ink);
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 32px;
+        max-width: none;
+      }
+      .hero-definition {
+        font-size: 17px;
+      }
+      .hero-core p {
+        font-size: 17px;
+      }
     }
 
     /* ─── FOOTER ─── */
-    footer {
-      position: relative;
-      z-index: 1;
-      border-top: 1px solid var(--rule);
+    .footer {
+      margin-top: var(--space-7);
+      padding: var(--space-5) 0 var(--space-6);
+      border-top: 1px solid var(--color-rule);
+      background: #fafafa;
     }
-
     .footer-inner {
-      max-width: 1100px;
+      max-width: 720px;
       margin: 0 auto;
-      padding: 1.75rem 2.5rem;
+      padding: 0 var(--space-3);
+    }
+    .footer-columns {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      margin-bottom: var(--space-4);
     }
-
-    .footer-left {
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      color: var(--ink-muted);
+    .footer-column {
+      min-width: 160px;
     }
-
-    .footer-right {
-      font-family: 'Geist Mono', monospace;
-      font-size: 10px;
-      letter-spacing: 0.1em;
-      color: var(--ink-faint);
+    .footer-column h3 {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-text-light);
+      margin-bottom: var(--space-1);
     }
-
-    /* ─── BACKGROUND MARK ─── */
-    .bg-mark {
-      position: fixed;
-      bottom: -120px;
-      right: -80px;
-      font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: 28vw;
-      font-weight: 300;
-      color: rgba(13,13,13,0.025);
-      pointer-events: none;
-      z-index: 0;
-      line-height: 1;
-      user-select: none;
+    .footer-column p,
+    .footer-column a {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--color-text-muted);
+      text-decoration: none;
+      display: block;
+      margin-bottom: 0;
     }
-
-    /* ─── FADE IN ─── */
-    .fade-up {
-      opacity: 0;
-      transform: translateY(18px);
-      animation: fadeUp 0.7s ease forwards;
+    .footer-column a:hover {
+      color: var(--color-text-primary);
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1px;
     }
-
-    .fade-up:nth-child(1) { animation-delay: 0.05s; }
-    .fade-up:nth-child(2) { animation-delay: 0.15s; }
-    .fade-up:nth-child(3) { animation-delay: 0.25s; }
-    .fade-up:nth-child(4) { animation-delay: 0.35s; }
-
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
+    .footer-meta {
+      margin-top: var(--space-4);
+      padding-top: var(--space-3);
+      border-top: 1px solid var(--color-border);
+      font-size: 13px;
+      color: var(--color-text-light);
     }
 
     /* ─── RESPONSIVE ─── */
-    @media (max-width: 680px) {
-      .header-inner, .page, .footer-inner {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
+    @media (max-width: 600px) {
+      h1 { font-size: 32px; }
+      .hero { padding: var(--space-4) 0 var(--space-5); }
+      .footer-columns {
+        flex-direction: column;
+        gap: var(--space-3);
       }
-      header { padding: 1.5rem 0 1.25rem; }
-      .hero { padding: 3rem 0 3.25rem; }
-      .hero-headline { font-size: 2.8rem; }
-      .product-card {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-      .about-strip {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-      }
-      .footer-right { display: none; }
     }
+
   </style>
 </head>
 <body>
 
-  <div class="bg-mark" aria-hidden="true">T</div>
-
-  <!-- HEADER -->
-  <header>
-    <div class="header-inner">
-      <a class="wordmark" href="/">
-        <img src="assets/images/tenerra-logo.png" alt="Tenerra logo" class="header-logo" />
-        Tenerra
+  <!-- SITE HEADER — persistent across all Tenerra pages -->
+  <header class="site-header" role="banner">
+    <div class="site-header-inner">
+      <a href="/" class="site-header-name" aria-label="Tenerra.ai — Home">
+        <img src="assets/images/tenerra-logo.png" alt="" class="site-header-logo" />
+        Tenerra.ai
       </a>
-      <span class="header-label">tenerra.ai</span>
+      <nav class="site-nav" aria-label="Primary">
+        <a href="https://pearcelaw.net/articles/" target="_blank" rel="noopener">Articles</a>
+      </nav>
     </div>
   </header>
 
-  <!-- MAIN -->
   <main>
-    <!-- HERO -->
-    <section class="hero">
-      <div class="page">
-        <p class="hero-label fade-up">Infrastructure for what lasts</p>
-        <h1 class="hero-headline fade-up">
-          A life is not a list.<br>
-          <em>We build for that.</em>
-        </h1>
-        <p class="hero-body fade-up">
-          Tenerra is home to ANYA — continuity infrastructure for families of individuals
-          with intellectual and developmental disabilities. Built by Vest&nbsp;Life,&nbsp;Inc.
-        </p>
-      </div>
-    </section>
+    <!-- HERO — Tenerra company Index -->
+    <section class="hero" role="main" aria-label="Tenerra — Building AI for personal continuity. Company overview.">
+      <div class="container">
 
-    <!-- PRODUCT -->
-    <section class="product-strip">
-      <div class="page">
-        <p class="strip-label">Our work</p>
-        <div class="product-card">
-          <div>
-            <p class="product-name">ANYA</p>
-            <p class="product-desc">
-              A Human Continuity Operating System for special needs families.
-              ANYA preserves what parents know about their child — observations, patterns,
-              the texture of a life — so continuity never depends on any single person's memory
-              across a 75+ year lifespan.
-            </p>
-            <span class="product-tag">
-              <span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);"></span>
-              Live — anya.tenerra.ai
-            </span>
-          </div>
-          <a class="product-link" href="https://anya.tenerra.ai" target="_blank" rel="noopener">
-            anya.tenerra.ai
-            <span class="arrow">→</span>
-          </a>
+        <h1>Tenerra.ai</h1>
+
+        <p class="hero-definition">
+          We're building personal knowledge infrastructure so that the knowledge we build with AI remains ours, travels with us, and continues to serve us throughout life.
+        </p>
+
+        <div class="hero-core">
+          <p>
+            AI gives us access to the knowledge of the world at our fingertips. But knowledge alone has no purpose. It becomes useful only when we apply it to our own lives, in our own circumstances, at the moment we need it.
+          </p>
+          <p>
+            Personal knowledge is not a fact we capture once and file away. It is shaped by three things that are in constant transition: time, the evolving conditions of our lives, and the moment in which knowledge is used.
+          </p>
+          <p>
+            As life unfolds, knowledge captured perfectly yesterday may no longer be useful today.
+          </p>
+          <p>
+            That is why no single AI chat, however thorough, can provide continuity of knowing. Useful personal knowledge must be maintained as life happens — continuously, in context, and for as long as it matters.
+          </p>
+          <p>
+            Today, the personal knowledge we build with AI about our own lives remains isolated in LLM silos. An AI platform may retain fragments of our history, but it does not carry forward the organized, usable context of a life. Close the tab, change the platform, or enter a new chapter of life, and the context that made the knowledge useful is left behind.
+          </p>
+          <p>
+            Tenerra is building systems that hold our personal knowledge in context for life — not at the edge of a platform.
+          </p>
+          <p>
+            ANYA is our first product: Personal Knowledge Continuity for parents of children with intellectual and developmental disabilities. It gives parents a place to preserve what they know about their child — in their own words, under their control, for the people who may need it, for as long as it is needed. Explore ANYA at <a href="https://anya.tenerra.ai" target="_blank" rel="noopener">anya.tenerra.ai</a>.
+          </p>
         </div>
-      </div>
-    </section>
 
-    <!-- ABOUT -->
-    <section class="about-strip page">
-      <p class="about-col-label">About</p>
-      <div class="about-text">
-        <p>
-          <strong>Vest Life, Inc.</strong> was founded by Michael Pearce —
-          a retired special needs attorney with 30 years of IDD practice in Sacramento County, California,
-          who spent three decades representing families of individuals with intellectual and developmental
-          disabilities across every age and stage of life.
-        </p>
-        <p style="margin-top:1rem;">
-          Tenerra is the domain under which Vest Life builds. ANYA is its first product —
-          and the distillation of everything Michael learned listening to what special needs
-          families actually need.
-        </p>
       </div>
     </section>
   </main>
 
   <!-- FOOTER -->
-  <footer>
+  <footer class="footer">
     <div class="footer-inner">
-      <span class="footer-left">© 2026 Vest Life, Inc. — tenerra.ai</span>
-      <span class="footer-right">Sacramento, California</span>
+      <div class="footer-columns">
+        <div class="footer-column">
+          <h3>Company</h3>
+          <p>Tenerra, Inc.</p>
+          <p>Sonoma, California</p>
+        </div>
+        <div class="footer-column">
+          <h3>Contact</h3>
+          <a href="mailto:michael@tenerra.ai">michael@tenerra.ai</a>
+        </div>
+        <div class="footer-column">
+          <h3>Product</h3>
+          <a href="https://www.anya.tenerra.ai" target="_blank" rel="noopener">anya.tenerra.ai</a>
+        </div>
+      </div>
+      <p class="footer-meta">© 2026 Tenerra, Inc. — Sonoma, California</p>
     </div>
   </footer>
 
