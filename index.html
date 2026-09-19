@@ -272,6 +272,88 @@
       }
     }
 
+    /* ─── HERO CTAS + EYEBROW ─── */
+    .hero-ctas {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-bottom: var(--space-3);
+    }
+    .btn {
+      display: inline-block;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-size: 15px;
+      padding: 11px 22px;
+      border-radius: 4px;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .btn-primary {
+      background: var(--color-text-primary);
+      color: #fff;
+    }
+    .btn-primary:hover {
+      background: #333;
+      text-decoration: none;
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--color-text-primary);
+      border: 1px solid var(--color-text-primary);
+    }
+    .btn-secondary:hover {
+      background: var(--color-text-primary);
+      color: #fff;
+      text-decoration: none;
+    }
+    .hero-eyebrow {
+      font-size: 13px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      font-style: italic;
+      color: var(--color-text-light);
+    }
+    @media (max-width: 600px) {
+      .btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    /* ─── CORE POSITIONING ─── */
+    .core-positioning {
+      padding: var(--space-6) 0;
+      border-bottom: 1px solid var(--color-rule);
+    }
+    .core-positioning h2 {
+      font-size: 30px;
+      line-height: 1.25;
+      margin-bottom: var(--space-4);
+      max-width: 20ch;
+    }
+    .core-positioning p {
+      font-size: 18px;
+      line-height: 1.65;
+      color: var(--color-text-secondary);
+      max-width: 640px;
+      margin-bottom: var(--space-3);
+    }
+    .core-positioning p:last-child {
+      margin-bottom: 0;
+    }
+    .core-cta a {
+      font-weight: 600;
+    }
+    @media (max-width: 600px) {
+      .core-positioning h2 {
+        font-size: 24px;
+        max-width: none;
+      }
+      .core-positioning p {
+        font-size: 17px;
+      }
+    }
+
     /* ─── FOOTER ─── */
     .footer {
       margin-top: var(--space-7);
@@ -354,38 +436,55 @@
 
   <main>
     <!-- HERO — Tenerra company Index -->
-    <section class="hero" role="main" aria-label="Tenerra — Building AI for personal continuity. Company overview.">
+    <section class="hero" role="main" aria-label="Tenerra — Personal knowledge, for life.">
       <div class="container">
 
-        <h1>Tenerra.ai</h1>
+        <h1>Personal knowledge.<br />For life.</h1>
 
         <p class="hero-definition">
-          We're building personal knowledge infrastructure so that the knowledge we build with AI remains ours, travels with us, and continues to serve us throughout life.
+          Tenerra is building personal knowledge infrastructure that keeps what you know connected, useful, and yours — across AI, across platforms, and across the chapters of your life.
         </p>
 
-        <div class="hero-core">
-          <p>
-            AI gives us access to the knowledge of the world at our fingertips. But knowledge alone has no purpose. It becomes useful only when we apply it to our own lives, in our own circumstances, at the moment we need it.
-          </p>
-          <p>
-            Personal knowledge is not a fact we capture once and file away. It is shaped by three things that are in constant transition: time, the evolving conditions of our lives, and the moment in which knowledge is used.
-          </p>
-          <p>
-            As life unfolds, knowledge captured perfectly yesterday may no longer be useful today.
-          </p>
-          <p>
-            That is why no single AI chat, however thorough, can provide continuity of knowing. Useful personal knowledge must be maintained as life happens — continuously, in context, and for as long as it matters.
-          </p>
-          <p>
-            Today, the personal knowledge we build with AI about our own lives remains isolated in LLM silos. An AI platform may retain fragments of our history, but it does not carry forward the organized, usable context of a life. Close the tab, change the platform, or enter a new chapter of life, and the context that made the knowledge useful is left behind.
-          </p>
-          <p>
-            Tenerra is building systems that hold our personal knowledge in context for life — not at the edge of a platform.
-          </p>
-          <p>
-            ANYA is our first product: Personal Knowledge Continuity for parents of children with intellectual and developmental disabilities. It gives parents a place to preserve what they know about their child — in their own words, under their control, for the people who may need it, for as long as it is needed. Explore ANYA at <a href="https://anya.tenerra.ai" target="_blank" rel="noopener">anya.tenerra.ai</a>.
-          </p>
+        <div class="hero-ctas">
+          <a href="#core-positioning" class="btn btn-primary">Explore the idea</a>
+          <a href="https://anya.tenerra.ai" target="_blank" rel="noopener" class="btn btn-secondary">Explore ANYA</a>
         </div>
+
+        <p class="hero-eyebrow">Personal Knowledge Continuity</p>
+
+      </div>
+    </section>
+
+    <!-- CORE POSITIONING -->
+    <section class="core-positioning" id="core-positioning" aria-label="Core positioning">
+      <div class="container">
+
+        <h2>Knowledge becomes useful when it becomes personal.</h2>
+
+        <p>
+          AI gives us access to the knowledge of the world at our fingertips. But access to knowledge isn't the same as having knowledge that is useful to us. It becomes useful when we can apply it to our own lives, in our own circumstances, at the moment we need it.
+        </p>
+        <p>
+          Personal knowledge isn't something we capture once and file away. It changes with time, with the circumstances of our lives, and with the moment in which we need to use it.
+        </p>
+        <p>
+          As life unfolds, knowledge captured perfectly yesterday may no longer be useful today.
+        </p>
+        <p>
+          That's why continuity of knowing requires more than a history of AI conversations. Personal knowledge must be maintained as life happens — continuously, in context, and for as long as it matters.
+        </p>
+        <p>
+          Today, the personal knowledge we build with AI remains largely isolated in LLM silos. An AI platform may remember fragments of our history, but it doesn't necessarily carry forward the organized, usable context of a life. Close the tab, change platforms, or enter a new chapter of life, and much of the context that made that knowledge useful can be left behind.
+        </p>
+        <p>
+          <strong>Tenerra is building systems that hold our personal knowledge in context for life — not at the edge of a platform.</strong>
+        </p>
+        <p>
+          <strong>ANYA is our first product: Personal Knowledge Continuity for parents of children with intellectual and developmental disabilities.</strong> It gives parents a place to preserve what they know about their child — in their own words, under their control, for the people who may need it, for as long as it is needed.
+        </p>
+        <p class="core-cta">
+          <a href="https://anya.tenerra.ai" target="_blank" rel="noopener">Explore ANYA →</a>
+        </p>
 
       </div>
     </section>
