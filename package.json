@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "render:og": "node assets/og/render.js"
+  },
+  "devDependencies": {
+    "playwright": "1.63.0"
+  }
+}

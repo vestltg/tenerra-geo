@@ -1,7 +1,7 @@
 // Renders anya-og.html to assets/images/anya-og.png (1200x630). Run: node assets/og/render.js
 // Google Fonts requests are fetched via curl so they go through the environment proxy.
-const { execFileSync, execSync } = require('child_process');
-const { chromium } = require(execSync('npm root -g').toString().trim() + '/playwright');
+const { execFileSync } = require('child_process');
+const { chromium } = require('playwright');
 (async () => {
   const b = await chromium.launch();
   const p = await b.newPage({ viewport: { width: 1200, height: 630 } });
