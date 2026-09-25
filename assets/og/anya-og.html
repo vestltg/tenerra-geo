@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ANYA OG Image</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,500;6..72,700&family=Inter:wght@400;500;600;700&display=block" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1c1a2e;
+    --muted: #5a5870;
+    --violet: #6b54f5;
+    --violet-soft: #ece8ff;
+    --green: #6fbf3a;
+    --card: #ffffff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    font-family: 'Inter', sans-serif;
+    color: var(--ink);
+    background:
+      radial-gradient(900px 500px at 0% 0%, #efeaff 0%, transparent 60%),
+      radial-gradient(700px 500px at 100% 100%, #e9e3ff 0%, transparent 60%),
+      #fbfaff;
+    display: grid;
+    grid-template-columns: 1fr 460px;
+    gap: 48px;
+    padding: 56px 64px 48px;
+  }
+  .left { display: flex; flex-direction: column; }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand img { width: 52px; height: 52px; margin: -6px; }
+  .brand span { font-weight: 700; font-size: 22px; letter-spacing: .14em; color: var(--violet); }
+  h1 {
+    font-family: 'Newsreader', serif;
+    font-weight: 700;
+    font-size: 60px;
+    line-height: 1.02;
+    letter-spacing: -0.02em;
+    margin-top: 30px;
+  }
+  h1 em { font-style: normal; color: var(--violet); }
+  .sub {
+    margin-top: 22px;
+    font-size: 21px;
+    line-height: 1.45;
+    color: var(--muted);
+    max-width: 560px;
+  }
+  .foot {
+    margin-top: auto;
+    display: flex; justify-content: space-between;
+    font-size: 17px; font-weight: 600;
+  }
+  .foot .url { color: var(--violet); }
+
+  .right { display: flex; align-items: center; }
+  .card {
+    width: 100%;
+    background: var(--card);
+    border-radius: 28px;
+    padding: 34px 32px 30px;
+    box-shadow: 0 30px 70px -20px rgba(80, 60, 200, .28), 0 0 0 1px rgba(107, 84, 245, .08);
+  }
+  .eyebrow { font-size: 14px; font-weight: 700; letter-spacing: .16em; color: var(--violet); }
+  .q {
+    margin-top: 20px;
+    margin-left: auto;
+    width: fit-content; max-width: 100%;
+    background: var(--violet); color: #fff;
+    font-size: 19px; font-weight: 500; line-height: 1.35; white-space: nowrap;
+    padding: 14px 18px;
+    border-radius: 20px 20px 6px 20px;
+  }
+  .a {
+    margin-top: 16px;
+    max-width: 94%;
+    background: var(--violet-soft);
+    font-family: 'Newsreader', serif;
+    font-size: 25px; font-weight: 500; line-height: 1.3;
+    padding: 18px 20px;
+    border-radius: 20px 20px 20px 6px;
+  }
+  .src {
+    margin-top: 18px;
+    display: flex; align-items: center; gap: 10px;
+    font-size: 15px; color: var(--muted);
+  }
+  .src::before {
+    content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--green);
+  }
+</style>
+</head>
+<body>
+  <div class="left">
+    <div class="brand"><img src="../images/tenerra-logo.png" alt=""><span>ANYA</span></div>
+    <h1>Everything you know about your child. <em>Remembered.</em></h1>
+    <p class="sub">Tell ANYA what works: the meds, the triggers, the song that gets them through the dentist. Anyone you trust can ask, any day.</p>
+    <div class="foot"><span>Tenerra.ai</span><span class="url">anya.tenerra.ai</span></div>
+  </div>
+  <div class="right">
+    <div class="card">
+      <div class="eyebrow">ASK ANYA</div>
+      <div class="q">What helps Sam at the dentist?</div>
+      <div class="a">Headphones on before the waiting room. Ask for Dr.&nbsp;Lee. She counts down out loud.</div>
+      <div class="src">From what Mom told ANYA in March</div>
+    </div>
+  </div>
+</body>
+</html>
